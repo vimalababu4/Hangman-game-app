@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+	<script src= "myApp.js"></script>
+	<link rel="stylesheet" href="style.css">
+<style>
+body {
+  background-color: linen;
+}</style>
+</head>
+<body>
+
+<div ng-app="Hanz" ng-controller="webController">
+
+	<div>
+		<div>
+			<img src = "https://images.app.goo.gl/dmmWhFKr6M18a9UD8" alt ="HANGMAN Game" style="float:center;width:42px;height:42px;">
+		</div>
+		<div>
+			Attempts left::  {{attempts}}
+		</div>
+		<div>
+			Correct guesses:: <span ng-repeat= "letter in correctLettersTyped"> {{letter}}
+			</span>
+		</div>
+		<div>
+			Incorrect guesses:: <span ng-repeat= "letter in incorrectLettersTyped"> {{letter}}</span>
+		</div>
+		<div>
+			Guess Game: {{displayWord}}
+		</div>
+		<div>
+			<input type="text" name="guess" ng-model="input.letter">
+			<button ng-click ="letterChosen()">Submit</button>
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>
